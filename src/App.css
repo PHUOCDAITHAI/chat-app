@@ -1,38 +1,1254 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: 'Open Sans', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.ApActive {
+  display: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Active {
+  background-color: pink;
+}
+
+/* Login */
+
+.login-goole {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  margin-top: 100px;
+}
+
+.login-goole .signingoogle {
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 700px;
+  margin: 100px auto;
+  box-shadow: 2px 2px 5px blue;
+  border-radius: 10px;
+}
+
+.login-goole .signingoogle i {
+  color: white;
+  font-size: 100px;
+  cursor: pointer;
+}
+
+.login-goole .signingoogle button {
+  padding: 50px;
+  font-size: 30px;
+  cursor: pointer;
+  border: none;
+  background-color: blue;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.login {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
+.login-form {
+  width: 500px;
+  box-shadow: 1px 2px 5px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  background: white;
+  position: relative;
+}
+
+.header-login {
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #272727;
+  color: white;
+}
+
+.form-control {
+  padding: 20px;
+}
+
+.mt-25 {
+  margin-top: 25px;
+}
+
+.form-control label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+.form-control input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  outline: none;
+}
+
+.form-control button {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  border: none;
+  background: #373737;
+  color: white;
+  cursor: pointer;
+  /* border-radius: 10px; */
+}
+
+.form-control button:hover {
+  background: #272727;
+}
+
+.signin {
+  margin-bottom: 20px;
+  padding-right: 20px;
+  float: right;
+  color: #D3D3D3;
+}
+
+.signin h5 {
+  font-weight: 300;
+}
+
+.signin span {
+  text-decoration: underline;
+  font-style: italic;
+  color: #00BFFF;
+  cursor: pointer;
+}
+
+.signin span:hover {
+  color: blue;
+}
+
+/* Login */
+
+/* Chat Room */
+
+.chat {
+  width: 100%;
+}
+
+.navchat {
+  height: 60px;
+  width: 100%;
+  background: #272727;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  position: fixed;
+  color: white;
+  box-shadow: 2px 2px 5px #373737;
+  margin-left: 250px;
+  z-index: 1;
+}
+
+.roomdesc {
+  flex: 3;
+}
+
+.adduser {
+  flex: 1;
+  display: flex;
+  margin-right: 20px;
+}
+
+.adduser h5 {
+  margin: 5px 10px;
+  cursor: pointer;
+}
+
+.fa-picture-o:hover {
+  color: pink;
+}
+
+.fa-user-plus:hover {
+  color: rgb(226, 75, 100);
+}
+
+/* Login */
+
+/* ChatRoom */
+.chatroom {
+  display: flex;
+}
+
+/* UserInfo */
+.userinfo {
+  position: fixed;
+  width: 250px;
+  height: 100vh;
+  background: #272727;
+  z-index: 1;
+  animation: animationUserInfoclose .5s ease-in-out;
+}
+
+.close-userinfo {
+  color: white;
+  display: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.logout {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  justify-content: space-around;
+}
+
+.logout img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.logout button {
+  padding: 0 10px;
+  cursor: pointer;
+  font-size: 17px;
+  background: white;
+  border: none;
+  color: black;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.userinfo h5 {
+  margin-left: 12px;
+  color: white;
+}
+
+/* Room */
+.room {
+  color: white;
+  cursor: pointer;
+}
+
+.header-room {
+  margin-top: 15px;
+  margin-left: 7px;
+}
+
+.name-room {
+  margin: 7px 12px;
+  animation: animationRoom .5s ease-in-out;
+}
+
+.name-room h5 {
+  padding: 5px;
+}
+
+@keyframes animationRoom {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(-20px);
+  }to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes animationUserInfo {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+/* Chat */
+.chat {
+  width: 100%;
+}
+
+/* NavChat */
+.navchat {
+  height: 60px;
+  width: 100%;
+  background: #272727;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  position: fixed;
+  color: white;
+  box-shadow: 2px 2px 5px #373737;
+  margin-left: 250px;
+  z-index: 1;
+}
+
+.navchat .iconsbar {
+  display: none;
+}
+
+.roomdesc {
+  flex: 3;
+}
+
+.adduser {
+  flex: 1;
+  display: flex;
+  margin-right: 20px;
+}
+
+.adduser h5 {
+  margin: 5px;
+  cursor: pointer;
+}
+
+.overplay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.2);  
+  display: none;
+} 
+
+.fa-picture-o:hover {
+  color: pink;
+}
+
+.fa-user-plus:hover {
+  color: rgb(226, 75, 100);
+}
+
+
+
+/* FormChat */
+.formchat {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  height: 70px;
+  box-shadow: 1px 2px 5px #272727;
+  margin-left: 250px;
+}
+
+.formchat-control {
+  display: flex;
+}
+
+.formchat input {
+  padding: 24px;
+  outline: none;
+  font-size: 18px;
+  border: none;
+  width: 70.6%;
+}
+
+.formchat button {
+  width: 8%;
+  padding: 24px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  background: #373737;
+  color: white;
+}
+
+.formchat button:hover {
+  background: #272727;
+}
+
+.upload {
+  width: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background: white;
+  position: relative;
+}
+
+.upload i {
+  font-size: 30px;
+  color: #373737;
+}
+
+.upload i:hover {
+  color: #272727;
+}
+
+/* Upload */
+.upload-main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.1);
+  z-index: 3;
+}
+
+.upload-file {
+  width: 400px;
+  box-shadow: 1px 2px 5px #272727;
+  border-radius: 10px;
+  overflow: hidden;
+  background: white;
+  background: #373737;
+  position: relative;
+  animation: uploadAnimation .5s ease-in-out;
+}
+
+.upload-file h1 {
+  padding: 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-video,
+.upload-img {
+  padding: 20px;
+}
+
+.upload-video label,
+.upload-img label {
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px;
+  color: white;
+  box-shadow: 1px 5px 10px #272727;
+  background: #272727;
+  border-radius: 10px;
+}
+
+.progress-file {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: -150px;
+  right: 100px;
+  /* box-shadow: 1px 5px 10px #272727; */
+}
+
+/* Spinner */
+/* .spinner {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+  } */
+
+  .spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 45px;
+    right: 0;
+  }
+  
+  .spinner .circle {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: black;
+    color: #ffffff;
+    border: 10px solid #242a2e;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 145px;
+  }
+  
+  .spinner .circle > label {
+    font-size: 30px;
+  }
+  
+  .spinner .circle::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 130px;
+    height: 130px;
+    border: 10px solid transparent;
+    border-top: 10px solid #008080;
+    border-right: 10px solid #008080;
+    border-radius: 50%;
+    animation: animate 2s linear infinite;
+  }
+  
+  @keyframes animate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @media (min-width: 600px) {
+    .message .contents {
+      max-width: 50%;
+    }
+  }
+
+@keyframes uploadAnimation {
+  from {
+    opacity: 0;
+    /* transform: translateY(150px); */
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+
+  }
+}
+
+.ml-30 {
+  margin-left: 50px;
+}
+
+.ml-40 {
+  margin-left: 65px;
+}
+
+input[type='file'] {
+  display: none
+}
+
+.close-upload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 7px;
+}
+
+.close-upload i {
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.close-upload i:hover {
+  color: red;
+}
+
+
+
+
+/* SendMessages */
+.wrap-msg {
+  position: relative;
+}
+
+.sendmsg {
+  padding-top: 70px;
+  padding-bottom: 100px;
+  margin-left: 250px;
+  background: none;
+
+}
+
+/* .background-msg {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position-y: 60px;
+  background-size: 1000px;
+  height: 1000px;
+} */
+
+.background-msg {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: -1;
+  margin-top: 60px;
+}
+
+.background-msg img {
+  height: 100%;
+  width: 100%;
+}
+
+/* Messages */
+.messages {
+  display: flex;
+  align-items: center;
+  /* border: 1px solid red; */
+  padding: 20px 10px;
+  margin-left: 10px;
+}
+
+.msg-img {
+  height: 40px;
+  width: 40px;
+}
+
+.msg-img img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.msg-text {
+  margin-left: 10px;
+  margin-top: 7px;
+  padding: 5px;
+  border-radius: 10px;
+  position: relative;
+  z-index: 0;
+}
+
+.sent .messages {
+  justify-content: flex-end;
+}
+
+.sent .messages .msg-text {
+  background: #00CED1;
+  color: white;
+  box-shadow: 1px 2px 5px #48D1CC;
+  cursor: pointer;
+}
+
+.sent .messages .msg-img {
+  display: none;
+}
+
+.received .messages .msg-text {
+  background: #00BFFF;
+  color: white;
+  box-shadow: 1px 2px 5px #6495ED;
+}
+
+.deletemsg button{
+  background: white;
+  border: none;
+  position: absolute;
+  bottom: -40px;
+  right: 0;
+  box-shadow: 1px 2px 5px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  font-size: 17px;
+  color: red;
+  padding: 5px;
+  width: 70px;
+  cursor: pointer;
+}
+
+/* AddRoom */
+.addroom {
+  display: flex;
+  align-items: center;
+  color: white;
+  margin-left: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+
+.addroom button {
+  margin-left: 5px;
+  border: none;
+  box-shadow: 1px 2px 5px white;
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 17px;
+  background: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.addroom-form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.1);
+  z-index: 1;
+}
+
+.addroom-animation {
+  width: 500px;
+  box-shadow: 1px 2px 5px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  background: white;
+  position: relative;
+  animation: animationUserInfo .5s ease-in-out;
+  margin: 0 10px;
+}
+
+.close-addroom {
+  position: absolute;
+  right: 0;
+  padding: 10px;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+
+.close-addroom:hover {
+  color: red;
+}
+
+/* BackGround */
+.background-main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.background {
+  width: 100%;
+  padding: 20px;
+  margin: 0 16px;
+  background: white;
+  box-shadow: 1px 5px 10px rgba(0,0,0,0.5);
+  border-radius: 10px;
+  position: relative;
+  animation: animationBackground ease-in 0.5s;
+  margin-left: 265px;
+}
+
+.background i {
+  border: 1px solid red;
+  padding: 10px;
+  font-size: 20px;
+  color: white;
+  background: crimson;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.background i:hover {
+  background: red;
+}
+
+.card {
+  margin: 10px;
+}
+
+.card-img {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.card-img img{
+  /* background-size: cover; */
+  width: 430px;
+  height: 300px;
+  background-repeat: no-repeat;
+  box-shadow: 1px 2px 7px black;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.card-img img:hover {
+  opacity: 0.9;
+}
+
+@keyframes animationBackground {
+  from {
+      opacity: 0;
+      transform: translateY(-150px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* AddUser */
+.adduser-form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.1);
+  z-index: 1;
+}
+
+.adduser-animation {
+  width: 500px;
+  box-shadow: 1px 2px 5px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  background: white;
+  position: relative;
+  animation: adduserAnimation .5s ease-in-out;
+  margin: 0 10px;
+}
+
+.listUser {
+  margin-top: 10px;
+}
+
+.userlist {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.userlist-wrap {
+  display: flex;
+  align-items: center;
+  border: 1px solid pink;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 5px 5px;
+  cursor: pointer;
+}
+
+.userlist-wrap img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.userlist h5 {
+  margin-left: 5px;
+}
+
+@keyframes adduserAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(-150px);
+  }to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* MusicPlayer */
+.musicplayer {
+  color: white;
+  margin-left: 10px;
+  margin-top: 20px;
+  box-shadow: 1px 5px 10px black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  width: 210px;
+  border-radius: 10px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.musicplayer img {
+  margin-left: 10px;
+  width: 40px;
+  height: 40px;
+}
+
+.music3D {
+  animation: animateCd infinite 3s linear;
+}
+
+
+.player {
+  /* display: flex; */
+  position: relative;
+}
+
+.player.Active {
+  display: none;
+}
+
+.dashboard {
+  position: fixed;
+  width: 70%;
+  height: 100vh;
+  background-color: #323232;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  top: 0;
+}
+
+.dashboard .icon-close {
+  color: white;
+  background-color: red;
+  border-radius: 50%;
+  padding: 2px 10px;
+  margin-top: -700px;
+  margin-left: 5px;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.dashboard .icon-close:hover {
+  color: red;
+  background-color: white;
+}
+
+.dashboard .container {
+  width: 95%;
+  background-color: #272727;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.479);
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.dashboard header h4 {
+  color: crimson;
+  text-align: center;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+.dashboard header h2 {
+  color: white;
+  text-align: center;
+}
+
+.cd {
+  width: 400px;
+  margin: 20px auto;
+}
+
+.cd-thumb {
+  width: 100%;
+  padding-top: 100%;
+  border-radius: 50%;
+  background-size: cover;
+  animation: animateCd infinite 10s linear;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.controls .play .icon-pause,
+.controls .play .icon-play{
+  cursor: pointer;
+  background-color: red;
+  color: white;
+  font-size: 30px;
+  padding: 25px;
+  margin: 0 30px;
+  border-radius: 50%;
+}
+
+.controls .next,
+.controls .prev {
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.progress {
+  margin-bottom: 20px;
+  width: 100%;
+  -webkit-appearance: none;
+  background-color: rgba(8, 80, 214, 0.644);
+  height: 4px;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.time {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+
+.playlist {
+  margin-left: 70%;
+  color: blue;
+  background-color: #323232;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.playlist .card {
+  width: 95%;
+  border-radius: 10px;
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  background-color: #272727;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.479);
+  cursor: pointer;
+}
+
+.playlist-card {
+  width: 30%;
+  margin: 10px;
+}
+
+.playlist-card .card-img {
+  width: 100%;
+  background-size: cover;
+  padding-top: 100%;
+  border-radius: 50%;
+}
+
+.header-card h3 {
+  color: white;
+}
+
+.header-card h5 {
+  opacity: 0.6;
+  font-style: italic;
+  color: white;
+}
+
+.close-mobile {
+  display: none;
+}
+
+.card.active{
+  background-color: crimson;
+}
+
+@keyframes animateCd {
+  from {
+    transform: rotate(0);
   }
   to {
     transform: rotate(360deg);
   }
 }
+
+/* Media */
+
+@media (max-width: 1023px){
+  .userinfo {
+    transform: translateX(-100%);
+    width: 100%;
+  }
+
+  .userinfo.userInfo-block {
+    transform: translateX(0%);
+    animation: animationUserInfo .5s ease-in-out;
+  }
+
+  .chat {
+    width: 100%;
+  }
+
+  .formchat input {
+    width: 70%;
+  }
+
+  .formchat button {
+    width: 20%;
+  }
+
+  .upload {
+    width: 10%;
+  }
+
+  .navchat {
+    margin-left: 0;
+  }
+
+  .formchat {
+    margin-left: 0;
+  }
+
+  .navchat .roomdesc {
+    display: flex;
+    justify-content: center;
+    flex: 4;
+  }
+
+  .navchat .iconsbar {
+    font-size: 40px;
+    cursor: pointer;
+  }
+
+  .navchat .adduser {
+    flex: 1;
+  }
+
+  .navchat .iconsbar {
+    display: block;
+  }
+
+  .overplay.overplay-block {
+    display: block;
+    animation: overplayUser .5s ease-in-out;
+  }
+  
+  .close-userinfo {
+    display: block;
+  }
+
+  .logout button {
+    font-size: 13px;
+  }
+
+  .sendmsg {
+    margin-left: 0px;
+  }
+
+  .background {
+    margin: 0 16px;
+  }
+
+  .player {
+    display: block;
+  }
+
+  .dashboard{
+    width: 100%;
+    height: 60vh;
+    position: fixed;
+    top: 0;
+  }
+
+  .cd-mobile {
+    width: 200px;
+  }
+
+  .controls .play .icon-pause,
+  .controls .play .icon-play{
+    font-size: 20px;
+    padding: 20px;
+    margin: 0 20px;
+    /* border-radius: 50%; */
+  }
+
+  .controls .next,
+  .controls .prev {
+    font-size: 20px;
+  }
+
+  .playlist {
+    margin-left: 0;
+    width: 100%;
+    margin-top: 60vh;
+  }
+
+  .playlist .card:first-child {
+    margin-top: 20px;
+  }
+
+  .playlist .card:last-child {
+    margin-bottom: 20px;
+  }
+
+  .playlist-card {
+    width: 20%;
+    margin: 10px;
+    margin-left: 20px;
+  }
+
+  .dashboard .icon-close {
+    display: none;
+  }
+
+  .container {
+    position: relative;
+  }
+
+  .close-mobile {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    
+  }
+
+  .close-mobile i {
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .close-mobile i:hover {
+    color: red;
+  }
+
+
+
+}
+
+@keyframes overplayUser {
+  from {
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+@keyframes animationUserInfo {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* @keyframes animationUserInfoclose {
+  from {
+    opacity: 1;
+    transform: translateX(0%);
+  }to {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+} */
